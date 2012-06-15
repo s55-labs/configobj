@@ -1801,7 +1801,8 @@ class ConfigObj(Section):
                 raise ConfigObjError('Value "%s" cannot be safely quoted.' % value)
             elif ((value[0] not in wspace_plus) and
                     (value[-1] not in wspace_plus) and
-                    (',' not in value)):
+                    (',' not in value) and
+                    ('=' not in value)):
                 quot = noquot
             else:
                 quot = self._get_single_quote(value)
